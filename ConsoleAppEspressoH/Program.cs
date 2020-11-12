@@ -64,7 +64,7 @@ namespace ConsoleAppEspressoH
 
                 double result1 = 0;
                 double result2 = 0;
-                
+                //
 
                 if (operator1 == '+' && operator2 == '+')
                 {
