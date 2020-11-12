@@ -12,8 +12,8 @@ namespace ConsoleAppEspressoH
             char restart = 'y';
             while (true)
             {
-                Console.Write("\nMata in första talet: ");
-                string tal1 = Console.ReadLine();
+                Console.Write("\nMata Coin första talet: ");
+                double tal1 = Convert.ToDouble(Console.ReadLine());
 
                 
                 Console.Write("Mata in första operatorn (/, *, +, -): ");
@@ -36,7 +36,7 @@ namespace ConsoleAppEspressoH
                 
 
                 Console.Write("\nMata in ett andra tal: ");
-                string tal2 = Console.ReadLine();
+                double tal2 = Convert.ToDouble(Console.ReadLine());
                 Console.Write("Mata in den andra operatorn (/, *, +, -): ");
 
                 char operator2 = Console.ReadKey().KeyChar;
@@ -55,16 +55,86 @@ namespace ConsoleAppEspressoH
                     }
                 }
                 Console.Write("\nMata in det tredje talet: ");
-                string tal3 = Console.ReadLine();
+                double tal3 = Convert.ToDouble(Console.ReadLine());
 
                 double i1 = Convert.ToDouble(tal1);
                 double i2 = Convert.ToDouble(tal2);
                 double i3 = Convert.ToDouble(tal3);
 
+
                 double result1 = 0;
                 double result2 = 0;
                 
 
+                if (operator1 == '+' && operator2 == '+')
+                {
+                    result2 = tal1 + tal2 + tal3;
+                }
+                else if (operator1 == '+' && operator2 == '-')
+                {
+                    result2 = tal1 + tal2 + tal3;
+                }
+                else if (operator1 == '+' && operator2 == '*')
+                {
+                    result2 = tal1 + tal2 * tal3;
+                }
+                else if (operator1 == '+' && operator2 == '/')
+                {
+                    result2 = tal1 + tal2 / tal3;
+                }
+
+                else if (operator1 == '-' && operator2 == '+')
+                {
+                    result2 = tal1 - tal2 + tal3;
+                }
+                else if (operator1 == '-' && operator2 == '-')
+                {
+                    result2 = tal1 - tal2 - tal3;
+                }
+                else if (operator1 == '-' && operator2 == '*')
+                {
+                    result2 = tal1 - tal2 * tal3;
+                }
+                else if (operator1 == '-' && operator2 == '/')
+                {
+                    result2 = tal1 - tal2 / tal3;
+                }
+
+                else if (operator1 == '*' && operator2 == '+')
+                { 
+                    result2 = tal1 * tal2 + tal3;
+                }
+                else if (operator1 == '*' && operator2 == '-')
+                {
+                    result2 = tal1 * tal2 - tal3;
+                }
+                else if (operator1 == '*' && operator2 == '*')
+                {
+                    result2 = tal1 * tal2 * tal3;
+                }
+                else if (operator1 == '*' && operator2 == '/')
+                {
+                    result2 = tal1 * tal2 /tal3;
+                }
+
+                else if (operator1 == '/' && operator2 == '+')
+                {
+                    result2 = tal1 / tal2 + tal3;
+                }
+                else if (operator1 == '/' && operator2 == '-')
+                {
+                    result2 = tal1 / tal2 - tal3;
+                }
+                else if (operator1 == '/' && operator2 == '*')
+                {
+                    result2 = tal1 / tal2 * tal3;
+                }
+                else if (operator1 == '/' && operator2 == '/')
+                {
+                    result2 = tal1 / tal2 / tal3;
+                }
+
+                /*
                 // Första Uträkning
                 if (operator1 == '+')
                 {
@@ -100,6 +170,7 @@ namespace ConsoleAppEspressoH
                 {
                     result2 = result1 * i3;
                 }
+                */
 
                 string equation = (tal1 + " " + operator1 + " " + tal2 + " " + operator2 + " " + tal3 + " = " + result2);
                 Console.WriteLine(equation);
